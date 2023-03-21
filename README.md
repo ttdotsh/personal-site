@@ -12,7 +12,6 @@ npm create astro@latest -- --template basics
 
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -53,3 +52,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## LinkedIn logo use
+
+Use of the LinkedIn logo on this site is covered in [thier brand guidelines](https://brand.linkedin.com/policies#:~:text=LinkedIn%20does%20not%20permit%20the%20use%20of%20the%20LinkedIn%20logo,promote%20your%20presence%20on%20LinkedIn.).

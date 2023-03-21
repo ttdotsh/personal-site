@@ -1,0 +1,55 @@
+---
+import GitHub from "./svg/GitHub.astro"
+import Instagram from "./svg/Instagram.astro"
+import Twitter from "./svg/Twitter.astro"
+import Email from "./svg/Email.astro"
+import LinkedIn from "./svg/LinkedIn.astro"
+
+const year = new Date().getFullYear()
+const links = [
+  { name: "GitHub", href: "https://github.com/timTonelli", Component: GitHub },
+  { name: "Email", href: "mailto:timtonelli@me.com", Component: Email },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/tim-tonelli",
+    Component: LinkedIn,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/timTonelli_",
+    Component: Twitter,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/tt.kb_",
+    Component: Instagram,
+  },
+]
+---
+
+<footer class="bg-white">
+  <div
+    class="mx-auto max-w-7xl py-12 px-6 md:flex md:items-center md:justify-between lg:px-8"
+  >
+    <div class="flex justify-center space-x-6 md:order-2">
+      {
+        links.map(({ name, href, Component }) => (
+          <a
+            class="text-gray-400 hover:text-gray-500"
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="sr-only">{name}</span>
+            <Component className="h-6 w-6" />
+          </a>
+        ))
+      }
+    </div>
+    <div class="mt-8 md:order-1 md:mt-0">
+      <p class="text-center text-xs leading-5 text-gray-500">
+        &copy; {year} Tim Tonelli. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
