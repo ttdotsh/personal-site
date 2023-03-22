@@ -1,0 +1,49 @@
+---
+import GitHub from "./svg/GitHub.astro"
+import Instagram from "./svg/Instagram.astro"
+import Twitter from "./svg/Twitter.astro"
+import Email from "./svg/Email.astro"
+import LinkedIn from "./svg/LinkedIn.astro"
+
+interface Props {
+  class?: string
+}
+
+const links = [
+  { name: "GitHub", href: "https://github.com/timTonelli", Component: GitHub },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/tim-tonelli",
+    Component: LinkedIn,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/timTonelli_",
+    Component: Twitter,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/tt.kb_",
+    Component: Instagram,
+  },
+  { name: "Email", href: "mailto:timtonelli@me.com", Component: Email },
+]
+---
+
+<ul class={`flex justify-center space-x-6 ${Astro.props.class}`}>
+  {
+    links.map(({ name, href, Component }) => (
+      <li>
+        <a
+          class="text-gray-400 hover:text-gray-500"
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="sr-only">{name}</span>
+          <Component />
+        </a>
+      </li>
+    ))
+  }
+</ul>
