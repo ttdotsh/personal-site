@@ -31,25 +31,27 @@ const links = [
   <div
     class="mx-auto max-w-7xl py-12 px-6 md:flex md:items-center md:justify-between lg:px-8"
   >
-    <div class="flex justify-center space-x-6 md:order-2">
+    <ul class="flex justify-center space-x-6 md:order-2">
       {
         links.map(({ name, href, Component }) => (
-          <a
-            class="text-gray-400 hover:text-gray-500"
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="sr-only">{name}</span>
-            <Component className="h-6 w-6" />
-          </a>
+          <li>
+            <a
+              class="text-gray-400 hover:text-gray-500"
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="sr-only">{name}</span>
+              <Component className="h-6 w-6" />
+            </a>
+          </li>
         ))
       }
-    </div>
-    <div class="mt-8 md:order-1 md:mt-0">
-      <p class="text-center text-xs leading-5 text-gray-500">
-        &copy; {year} Tim Tonelli. All rights reserved.
-      </p>
-    </div>
+    </ul>
+    <p
+      class="mt-8 text-center text-xs leading-5 text-gray-500 md:order-1 md:mt-0"
+    >
+      &copy; {year} Tim Tonelli. All rights reserved.
+    </p>
   </div>
 </footer>
