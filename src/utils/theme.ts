@@ -1,15 +1,14 @@
-export type Theme = "light" | "dark"
-
-export function getThemePref(): Theme {
-  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    return localStorage.getItem("theme") as Theme
-  }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light"
+function storeThemeSetting(theme: Theme): void {
+  localStorage.setItem("theme", theme)
 }
 
-export function setDocTheme(theme: Theme): void {
-  const root = document.documentElement
-  theme === "light" ? root.classList.remove("dark") : root.classList.add("dark")
+export function toggleTheme() {
+  const { classList } = document.documentElement
+  if (classList.contains("dark")) {
+    classList.remove("dark")
+    storeThemeSetting("light")
+  } else {
+    classList.add("dark")
+    storeThemeSetting("dark")
+  }
 }
