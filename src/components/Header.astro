@@ -12,13 +12,13 @@ const links = [
 
 <header class="mt-4 flex">
   <div class="flex-1"></div>
-  <nav class="flex justify-center">
-    <ul
-      class="flex space-x-6 rounded-full py-2 px-6 font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5"
-    >
+  <nav
+    class="rounded-full bg-white/70 py-2 px-6 font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:ring-zinc-50/10"
+  >
+    <ul class="flex space-x-6">
       {
         links.map(({ text, url }) => (
-          <li class="hover:text-teal-500">
+          <li class="hover:text-teal-500 dark:hover:text-teal-400">
             <a href={url}>{text}</a>
           </li>
         ))
