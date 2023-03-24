@@ -1,0 +1,31 @@
+---
+import ThemeToggle from "./ThemeToggle"
+
+const links = [
+  { text: "About", url: "/about" },
+  { text: "Just", url: "/just" },
+  { text: "Some", url: "/some" },
+  { text: "Other", url: "/other" },
+  { text: "Stuff", url: "/stuff" },
+]
+---
+
+<header class="mt-4 flex">
+  <div class="flex-1"></div>
+  <nav class="flex justify-center">
+    <ul
+      class="flex space-x-6 rounded-full py-2 px-6 font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5"
+    >
+      {
+        links.map(({ text, url }) => (
+          <li class="hover:text-teal-500">
+            <a href={url}>{text}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="flex flex-1 items-center justify-end">
+    <ThemeToggle client:load />
+  </div>
+</header>
