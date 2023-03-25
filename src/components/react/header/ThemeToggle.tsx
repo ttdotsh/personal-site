@@ -1,31 +1,33 @@
-import { useState } from "react"
-
-import { toggleTheme } from "../utils/theme"
+import { toggleTheme } from "../../../utils/theme"
 
 /**
  * @requires client:load
  */
-export default function ThemeToggle() {
+export function ThemeToggle() {
   return (
-    <button className="" onClick={toggleTheme}>
+    <button
+      className="group rounded-full bg-white/90 py-1 px-2 ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
+      onClick={toggleTheme}
+    >
       <ThemeIcon />
     </button>
   )
 }
 
 function ThemeIcon() {
-  const [hover, setHover] = useState<boolean>(false)
+  // const [hover, setHover] = useState<boolean>(false)
 
   return (
     <svg
-      onPointerOver={() => setHover(true)}
-      onPointerLeave={() => setHover(false)}
+      // onPointerDown={() => setHover(true)}
+      // onPointerUp={() => setHover(false)}
       xmlns="http://www.w3.org/2000/svg"
-      fill={hover ? "currentColor" : "none"}
+      // fill={hover ? "currentColor" : "none"}
+      fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-6 w-6 hover:text-orange-400"
+      className="h-7 w-7 transition group-hover:text-orange-400"
     >
       <LightPath />
       <DarkPath />
