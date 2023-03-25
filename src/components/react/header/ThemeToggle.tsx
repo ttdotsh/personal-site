@@ -15,19 +15,13 @@ export function ThemeToggle() {
 }
 
 function ThemeIcon() {
-  // const [hover, setHover] = useState<boolean>(false)
-
   return (
     <svg
-      // onPointerDown={() => setHover(true)}
-      // onPointerUp={() => setHover(false)}
       xmlns="http://www.w3.org/2000/svg"
-      // fill={hover ? "currentColor" : "none"}
-      fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-7 w-7 transition group-hover:text-orange-400"
+      className="h-7 w-7 fill-none transition group-hover:fill-current group-hover:text-orange-400"
     >
       <LightPath />
       <DarkPath />
