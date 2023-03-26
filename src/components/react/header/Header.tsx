@@ -1,12 +1,13 @@
 import { DesktopNav } from "./DesktopNav"
+import { MobileNav } from "./MobileNav"
 import { ThemeToggle } from "./ThemeToggle"
 
 const navItems = [
-  { text: "About", href: "/about" },
-  { text: "Just", href: "/just" },
-  { text: "Some", href: "/some" },
-  { text: "Other", href: "/other" },
-  { text: "Stuff", href: "/stuff" },
+  { text: "About", href: "#" },
+  { text: "Just", href: "#" },
+  { text: "Some", href: "#" },
+  { text: "Other", href: "#" },
+  { text: "Stuff", href: "#" },
 ]
 
 /**
@@ -16,8 +17,15 @@ export function Header() {
   return (
     <header className="mt-4 flex">
       <div className="flex-1"></div>
-      <DesktopNav navItems={navItems} className="pointer-events-auto" />
+      <DesktopNav
+        navItems={navItems}
+        className="pointer-events-auto hidden md:block"
+      />
       <div className="flex flex-1 items-center justify-end">
+        <MobileNav
+          navItems={navItems}
+          className="pointer-events-auto mr-4 md:hidden"
+        />
         <ThemeToggle />
       </div>
     </header>
