@@ -13,9 +13,9 @@ export function DesktopNav({ navItems, className }: DesktopNavProps) {
     <nav className={className}>
       <ul className="flex rounded-full bg-white/70 px-3 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:ring-zinc-50/10">
         {navItems.map(({ text, href }, i) => (
-          <NavItem key={i} href={href}>
+          <DesktopNavItem key={i} href={href}>
             {text}
-          </NavItem>
+          </DesktopNavItem>
         ))}
       </ul>
     </nav>
@@ -27,7 +27,7 @@ interface NavItemProps {
   children: React.ReactNode
 }
 
-function NavItem({ href, children }: NavItemProps) {
+function DesktopNavItem({ href, children }: NavItemProps) {
   /**
    * @todo add highlighting active nav item
    * const isActive = href === window.location.pathname
