@@ -1,5 +1,6 @@
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
+import cx from "classix"
 
 import type { NavItem } from "@types"
 
@@ -15,7 +16,14 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
   return (
     <Popover className="relative">
       <Popover.Button
-        className={`z-50 flex items-center rounded-full bg-white/90 p-2 text-sm shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 hover:text-teal-500 hover:transition-colors dark:bg-zinc-800/70 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20 ${className}`}
+        className={cx(
+          "z-50 flex items-center rounded-full bg-white/90 p-2 text-sm",
+          "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
+          "hover:text-teal-500 hover:transition-colors",
+          "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
+          "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",
+          className
+        )}
       >
         <ChevronIcon className="transition-transform ui-open:-rotate-90" />
         <span className="mx-1">Menu</span>
@@ -44,7 +52,11 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
           <Popover.Panel
             as="nav"
             focus
-            className="fixed inset-x-6 top-14 z-50 rounded-xl bg-white/95 p-4 ring-1 ring-white dark:bg-zinc-800/95 dark:ring-zinc-800"
+            className={cx(
+              "fixed inset-x-6 top-14 z-50 rounded-xl",
+              "bg-white/95 p-4 ring-1 ring-white",
+              "dark:bg-zinc-800/95 dark:ring-zinc-800"
+            )}
           >
             <div className="flex items-center justify-between px-2">
               <h2 className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -99,7 +111,7 @@ function ChevronIcon({ className }: IconProps) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`inline-block h-4 w-4 ${className}`}
+      className={cx("inline-block h-4 w-4", className)}
     >
       <path
         strokeLinecap="round"
@@ -118,7 +130,7 @@ function CloseIcon({ className }: IconProps) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`h-6 w-6 transition hover:text-red-400 ${className}`}
+      className={cx("h-6 w-6 transition hover:text-red-400", className)}
     >
       <path
         strokeLinecap="round"
