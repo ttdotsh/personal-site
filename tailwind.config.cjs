@@ -5,5 +5,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  plugins: [require("@headlessui/tailwindcss")],
 }
