@@ -15,7 +15,7 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
   return (
     <Popover className="relative">
       <Popover.Button
-        className={`z-50 flex items-center rounded-full bg-white/90 p-2 text-sm shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition hover:text-teal-500 dark:bg-zinc-800/70 dark:text-teal-400 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20 ${className}`}
+        className={`hover:trasnition-colors z-50 flex items-center rounded-full bg-white/90 p-2 text-sm shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 hover:text-teal-500 dark:bg-zinc-800/70 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20 ${className}`}
       >
         <ChevronIcon className="transition-transform ui-open:-rotate-90" />
         <span className="mx-1">Menu</span>
