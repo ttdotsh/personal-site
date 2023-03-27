@@ -1,4 +1,4 @@
-import cx from "classix"
+import { cx } from "classix"
 
 import { toggleTheme } from "../../../utils/theme"
 
