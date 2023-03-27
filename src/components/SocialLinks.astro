@@ -1,4 +1,6 @@
 ---
+import cx from "classix"
+
 import GitHub from "./svg/GitHub.astro"
 import Instagram from "./svg/Instagram.astro"
 import Twitter from "./svg/Twitter.astro"
@@ -30,7 +32,7 @@ const links = [
 ]
 ---
 
-<ul class={`flex space-x-6 ${Astro.props.class}`}>
+<ul class={cx("flex space-x-6", Astro.props.class)}>
   {
     links.map(({ name, href, Component }) => (
       <li>

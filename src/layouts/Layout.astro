@@ -1,4 +1,6 @@
 ---
+import cx from "classix"
+
 import Head from "../components/Head.astro"
 import { Header } from "../components/react/header"
 import Footer from "../components/Footer.astro"
@@ -14,7 +16,11 @@ const { title } = Astro.props
 <html lang="en">
   <Head title={title} />
   <body
-    class="bg-zinc-50 px-6 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 md:px-12"
+    class={cx(
+      "bg-zinc-50 px-6 text-zinc-800",
+      "dark:bg-zinc-900 dark:text-zinc-100",
+      "md:px-12"
+    )}
   >
     <Header client:load />
     <slot />

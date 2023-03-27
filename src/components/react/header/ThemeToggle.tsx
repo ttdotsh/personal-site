@@ -1,3 +1,5 @@
+import cx from "classix"
+
 import { toggleTheme } from "../../../utils/theme"
 
 /**
@@ -10,7 +12,12 @@ import { toggleTheme } from "../../../utils/theme"
 export function ThemeToggle() {
   return (
     <button
-      className="group rounded-full bg-white/90 py-1 px-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
+      className={cx(
+        "group rounded-full bg-white/90 py-1 px-2",
+        "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
+        "dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10",
+        "dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
+      )}
       onClick={toggleTheme}
     >
       <ThemeIcon />
@@ -25,7 +32,10 @@ function ThemeIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-7 w-7 fill-none transition group-hover:fill-current group-hover:text-orange-400"
+      className={cx(
+        "h-7 w-7 fill-none transition",
+        "group-hover:fill-current group-hover:text-orange-400"
+      )}
     >
       <LightPath className="dark:hidden" />
       <DarkPath className="hidden dark:block" />
