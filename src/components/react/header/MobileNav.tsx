@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
-import cx from "classix"
+import { cx } from "classix"
 
 import type { NavItem } from "@types"
 
