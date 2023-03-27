@@ -8,7 +8,7 @@ import { toggleTheme } from "../../../utils/theme"
 export function ThemeToggle() {
   return (
     <button
-      className="group rounded-full bg-white/90 py-1 px-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 hover:transition-colors dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
+      className="group rounded-full bg-white/90 py-1 px-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10 dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
       onClick={toggleTheme}
     >
       <ThemeIcon />
