@@ -4,6 +4,8 @@ import { toggleTheme } from "../../../utils/theme"
  * @requires client:load
  * @todo add long press functionality to make a dropdown menu
  * with light, dark, system (clear localStorage) options
+ * @todo find a way for hover:transition-colors to not apply to
+ * background color, but for everything else
  */
 export function ThemeToggle() {
   return (
