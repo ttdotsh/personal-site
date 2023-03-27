@@ -2,6 +2,8 @@ import { toggleTheme } from "../../../utils/theme"
 
 /**
  * @requires client:load
+ * @todo add long press functionality to make a dropdown menu
+ * with light, dark, system (clear localStorage) options
  */
 export function ThemeToggle() {
   return (
