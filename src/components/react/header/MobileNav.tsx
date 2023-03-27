@@ -14,7 +14,7 @@ interface MobileNavProps {
  */
 export function MobileNav({ navItems, className }: MobileNavProps) {
   return (
-    <Popover className="relative">
+    <Popover>
       <Popover.Button
         className={cx(
           "z-50 flex items-center rounded-full bg-white/90 p-2 text-sm",
@@ -22,6 +22,7 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
           "hover:text-teal-500 hover:transition-colors",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
           "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",
+          "focus:outline-none",
           className
         )}
       >
@@ -51,7 +52,6 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
         >
           <Popover.Panel
             as="nav"
-            focus
             className={cx(
               "fixed inset-x-6 top-14 z-50 rounded-xl",
               "bg-white/95 p-4 ring-1 ring-white",
