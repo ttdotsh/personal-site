@@ -9,41 +9,69 @@ import LinkedIn from "./svg/LinkedIn.astro"
 
 interface Props {
   class?: string
+  orientation: "horizontal" | "vertical"
 }
 
 const links = [
-  { name: "GitHub", href: "https://github.com/timTonelli", Component: GitHub },
+  {
+    name: "GitHub",
+    text: "Follow on Github",
+    href: "https://github.com/timTonelli",
+    Component: GitHub,
+  },
   {
     name: "LinkedIn",
+    text: "Follow on LinkedIn",
     href: "https://www.linkedin.com/in/tim-tonelli",
     Component: LinkedIn,
   },
   {
     name: "Twitter",
+    text: "Follow on Twitter",
     href: "https://twitter.com/timTonelli_",
     Component: Twitter,
   },
   {
     name: "Instagram",
+    text: "Follow on Instagram",
     href: "https://www.instagram.com/tt.kb_",
     Component: Instagram,
   },
-  { name: "Email", href: "mailto:timtonelli@me.com", Component: Email },
+  {
+    name: "Email",
+    text: "timtonelli@me.com",
+    href: "mailto:timtonelli@me.com",
+    Component: Email,
+  },
 ]
 ---
 
-<ul class={cx("flex space-x-6", Astro.props.class)}>
+<ul
+  class={cx(
+    "flex ",
+    Astro.props.orientation === "vertical" ? "flex-col space-y-6" : "space-x-6",
+    Astro.props.class
+  )}
+>
   {
-    links.map(({ name, href, Component }) => (
-      <li>
+    links.map(({ name, href, text, Component }) => (
+      <li class="w-fit">
         <a
-          class="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-100"
+          class={cx(
+            "flex items-center text-zinc-400 transition",
+            "hover:text-zinc-600",
+            "dark:hover:text-zinc-100",
+            Astro.props.orientation === "vertical" && "gap-4"
+          )}
           href={href}
           target="_blank"
           rel="noreferrer"
         >
           <span class="sr-only">{name}</span>
           <Component />
+          {Astro.props.orientation === "vertical" && (
+            <span class="text-sm">{text}</span>
+          )}
         </a>
       </li>
     ))
