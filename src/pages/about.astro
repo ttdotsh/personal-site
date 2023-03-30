@@ -1,0 +1,58 @@
+---
+import Layout from "layouts/Layout.astro"
+import SocialLinks from "components/SocialLinks.astro"
+---
+
+<Layout title="About">
+  <main>
+    <h1 class="max-w-4xl text-5xl font-bold tracking-tight">
+      👋 I'm Tim, and I'm a software engineer based in the Greater Boston area.
+    </h1>
+    <div class="mt-6 grid grid-rows-2 gap-12 lg:grid-cols-2 lg:grid-rows-1">
+      <div class="space-y-4 text-zinc-600 dark:text-zinc-300">
+        <p class="">
+          Currently, I'm working as a full-stack developer at Via Science, where
+          I build and maintain frontend apps in Angular and React, backend API’s
+          and microservices with Python, Docker, Kubernetes and Celery, and
+          deployment pipelines with tools like Terraform, and AWS. I am
+          passionate about building software and tools that people can use to
+          make the world a better place, and Via’s mission of moving the needle
+          toward cleaner, safer, and more equitable communities perfectly aligns
+          with that passion.
+        </p>
+        <!-- <p class="">
+          Prior to my current position, I worked briefly as a freelance developer
+          and took on projects using React helping a budding startup put together
+          a component library for internal use, and React Native and Expo building
+          out an MVP mobile app for a trucking company to help automate
+          dispatching and check-in workflows.
+        </p> -->
+        <p class="">
+          I got into tech because I wanted to shift into a career where I could
+          have more impact in what I was doing and more agency over my own
+          growth. What I love about this industry is that it encourages and
+          demands constant learning. As someone who loves to discover new
+          concepts, practice new skills and take on new challenges, I cannot
+          imagine a more perfect space to exist in. I have always enjoyed using
+          technology, and I absolutely love that I get to work in this space
+          where I get to deliver products that others can find the same joy in
+          that I felt growing up with technology.
+        </p>
+        <p class="">
+          My work philosophy is rooted in collaboration and communication. I
+          believe that the best results come from working with a team that is
+          open and transparent about their goals, challenges, and ideas. I
+          strive to approach each project with a problem-solving mindset,
+          focusing on identifying the root cause of any issues and developing
+          elegant, scalable solutions. Additionally, I value continuous learning
+          and growth, and I'm always looking for ways to expand my skill set and
+          stay up-to-date with the latest trends and technologies in the
+          industry.
+        </p>
+      </div>
+      <div>
+        <SocialLinks orientation="vertical" />
+      </div>
+    </div>
+  </main>
+</Layout>

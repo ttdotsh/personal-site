@@ -3,7 +3,8 @@ import { MobileNav } from "./MobileNav"
 import { ThemeToggle } from "./ThemeToggle"
 
 const navItems = [
-  { text: "About", href: "#" },
+  { text: "Home", href: "/" },
+  { text: "About", href: "/about" },
   { text: "Just", href: "#" },
   { text: "Some", href: "#" },
   { text: "Other", href: "#" },
@@ -15,7 +16,7 @@ const navItems = [
  */
 export function Header() {
   return (
-    <header className="mt-4 flex">
+    <header className="mb-6 flex pt-4">
       <div className="flex-1"></div>
       <DesktopNav
         navItems={navItems}
