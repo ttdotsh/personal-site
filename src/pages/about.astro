@@ -1,16 +1,45 @@
 ---
+import { cx } from "classix"
+
 import Layout from "layouts/Layout.astro"
+import { Picture } from "@astrojs/image/components"
 import SocialLinks from "components/SocialLinks.astro"
 ---
 
 <Layout title="About">
   <main>
-    <h1 class="max-w-4xl text-5xl font-bold tracking-tight">
-      👋 I'm Tim, and I'm a software engineer based in the Greater Boston area.
-    </h1>
-    <div class="mt-6 grid grid-rows-2 gap-12 lg:grid-cols-2 lg:grid-rows-1">
-      <div class="space-y-4 text-zinc-600 dark:text-zinc-300">
-        <p class="">
+    <div
+      class={cx(
+        "mt-16 grid grid-cols-2 gap-y-6 sm:gap-y-12",
+        "lg:grid-cols-[2fr_minmax(min-content,_1fr)] lg:grid-rows-[auto_1fr]"
+      )}
+    >
+      <div class="lg:pl-20">
+        <Picture
+          class="rounded-full"
+          src={import("../assets/placeholder.jpeg")}
+          alt="portrait"
+          sizes="(min-width: 1024px) 32rem, 20rem"
+          widths={[200, 400, 800]}
+          aspectRatio={1 / 1}
+        />
+      </div>
+      <SocialLinks
+        class={cx(
+          "col-span-2 text-zinc-500 justify-self-start",
+          "dark:text-zinc-400",
+          "sm:hidden lg:self-start lg:pl-20"
+        )}
+        orientation="horizontal"
+      />
+      <div
+        class="order-last col-span-2 space-y-6 dark:text-zinc-300 lg:order-first lg:col-span-1 lg:row-span-2"
+      >
+        <h1 class="max-w-4xl text-4xl font-bold tracking-tight md:text-5xl">
+          👋 I'm Tim, and I'm a software engineer based in the Greater Boston
+          area.
+        </h1>
+        <p>
           Currently, I'm working as a full-stack developer at Via Science, where
           I build and maintain frontend apps in Angular and React, backend API’s
           and microservices with Python, Docker, Kubernetes and Celery, and
@@ -20,15 +49,19 @@ import SocialLinks from "components/SocialLinks.astro"
           toward cleaner, safer, and more equitable communities perfectly aligns
           with that passion.
         </p>
-        <!-- <p class="">
-          Prior to my current position, I worked briefly as a freelance developer
-          and took on projects using React helping a budding startup put together
-          a component library for internal use, and React Native and Expo building
-          out an MVP mobile app for a trucking company to help automate
-          dispatching and check-in workflows.
-        </p> -->
-        <p class="">
-          I got into tech because I wanted to shift into a career where I could
+        <p>
+          My work philosophy is rooted in collaboration and communication. I
+          believe that the best results come from working with a team that is
+          open and transparent about their goals, challenges, and ideas. I
+          strive to approach each project with a problem-solving mindset,
+          focusing on identifying the root cause of any issues and developing
+          elegant, scalable solutions. Additionally, I value continuous learning
+          and growth, and I'm always looking for ways to expand my skill set and
+          stay up to date with the latest trends and technologies in the
+          industry.
+        </p>
+        <p>
+          I got into tech because I wanted to move into a career where I could
           have more impact in what I was doing and more agency over my own
           growth. What I love about this industry is that it encourages and
           demands constant learning. As someone who loves to discover new
@@ -38,21 +71,16 @@ import SocialLinks from "components/SocialLinks.astro"
           where I get to deliver products that others can find the same joy in
           that I felt growing up with technology.
         </p>
-        <p class="">
-          My work philosophy is rooted in collaboration and communication. I
-          believe that the best results come from working with a team that is
-          open and transparent about their goals, challenges, and ideas. I
-          strive to approach each project with a problem-solving mindset,
-          focusing on identifying the root cause of any issues and developing
-          elegant, scalable solutions. Additionally, I value continuous learning
-          and growth, and I'm always looking for ways to expand my skill set and
-          stay up-to-date with the latest trends and technologies in the
-          industry.
-        </p>
       </div>
-      <div>
-        <SocialLinks orientation="vertical" />
-      </div>
+      <SocialLinks
+        class={cx(
+          "hidden order-2 place-self-center text-zinc-500",
+          "dark:text-zinc-400",
+          "sm:block",
+          "lg:self-start lg:pl-20"
+        )}
+        orientation="vertical"
+      />
     </div>
   </main>
 </Layout>

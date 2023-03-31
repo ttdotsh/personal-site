@@ -48,7 +48,7 @@ const links = [
 
 <ul
   class={cx(
-    "flex ",
+    "flex text-zinc-400",
     Astro.props.orientation === "vertical" ? "flex-col space-y-6" : "space-x-6",
     Astro.props.class
   )}
@@ -58,7 +58,7 @@ const links = [
       <li class="w-fit">
         <a
           class={cx(
-            "flex items-center text-zinc-400 transition",
+            "flex items-center transition",
             "hover:text-zinc-600",
             "dark:hover:text-zinc-100",
             Astro.props.orientation === "vertical" && "gap-4"
@@ -70,7 +70,7 @@ const links = [
           <span class="sr-only">{name}</span>
           <Component />
           {Astro.props.orientation === "vertical" && (
-            <span class="text-sm">{text}</span>
+            <span class="whitespace-nowrap text-sm">{text}</span>
           )}
         </a>
       </li>
