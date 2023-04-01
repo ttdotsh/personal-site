@@ -1,5 +1,7 @@
+// Library imports
 import { cx } from "classix"
 
+// Project imports
 import type { NavItem } from "@types"
 
 interface DesktopNavProps {

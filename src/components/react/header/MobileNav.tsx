@@ -1,7 +1,9 @@
+// Library imports
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { cx } from "classix"
 
+// Project imports
 import type { NavItem } from "@types"
 
 interface MobileNavProps {

@@ -1,5 +1,7 @@
+// Library imports
 import { cx } from "classix"
 
+// Project imports
 import { toggleTheme } from "../../../utils/theme"
 
 /**
