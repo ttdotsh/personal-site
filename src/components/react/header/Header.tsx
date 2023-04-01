@@ -17,7 +17,7 @@ const navItems = [
 export function Header() {
   return (
     <header>
-      <div className="mb-6 flex pt-4">
+      <div className="mb-6 mt-4 flex">
         <div className="flex-1"></div>
         <DesktopNav
           navItems={navItems}

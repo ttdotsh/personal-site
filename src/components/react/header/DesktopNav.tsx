@@ -15,7 +15,7 @@ export function DesktopNav({ navItems, className }: DesktopNavProps) {
     <nav className={className}>
       <ul
         className={cx(
-          "flex rounded-full bg-white/70 px-3 text-sm font-medium",
+          "flex space-x-6 rounded-full bg-white/70 px-6 py-2 ",
           "shadow-lg shadow-zinc-800/5 ring-1  ring-zinc-900/5 ",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10"
         )}
@@ -44,7 +44,7 @@ function DesktopNavItem({ href, children }: NavItemProps) {
   return (
     <li>
       <a
-        className="block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+        className="block transition hover:text-teal-500 dark:hover:text-teal-400"
         href={href}
       >
         {children}
