@@ -1,0 +1,89 @@
+---
+// Library imports
+import { cx } from "classix"
+import { Picture } from "@astrojs/image/components"
+
+// Project imports
+import Layout from "layouts/Layout.astro"
+import SocialLinks from "components/SocialLinks.astro"
+---
+
+<Layout title="About">
+  <main>
+    <div
+      class={cx(
+        "grid grid-cols-1",
+        "sm:grid-cols-2",
+        "lg:mt-16 lg:grid-cols-[2fr_minmax(min-content,_1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-20 lg:gap-y-8"
+      )}
+    >
+      <div>
+        <Picture
+          class="mx-auto rounded-full"
+          src={import("../assets/placeholder.jpeg")}
+          alt="portrait"
+          sizes="(min-width: 640px) 18rem, (min-width: 1024px) 32rem, 10rem"
+          widths={[100, 200, 400]}
+          aspectRatio={1 / 1}
+        />
+        <SocialLinks
+          class="mx-auto mt-3 w-fit sm:hidden"
+          orientation="horizontal"
+        />
+      </div>
+      <SocialLinks
+        class={cx(
+          "hidden place-self-center",
+          "sm:block",
+          "lg:order-last lg:self-start"
+        )}
+        orientation="vertical"
+      />
+      <div
+        class={cx(
+          "mt-6 space-y-8",
+          "sm:col-span-2",
+          "lg:order-first lg:col-span-1 lg:row-span-2 lg:mt-0"
+        )}
+      >
+        <h1 class="max-w-4xl text-4xl font-bold tracking-tight md:text-5xl">
+          👋 I'm Tim, and I'm a software engineer from the Greater Boston area.
+        </h1>
+        <div class="space-y-6 dark:text-zinc-200">
+          <p>
+            Currently, I'm working as a full-stack developer at Via Science,
+            where I build and maintain frontend apps in Angular and React,
+            backend API’s and microservices with Python, Docker, Kubernetes and
+            Celery, and deployment pipelines with tools like Terraform, and AWS.
+            I am passionate about building software and tools that people can
+            use to make the world a better place, and Via’s mission of building
+            software that can make communities cleaner, safer, and more
+            equitable perfectly aligns with that passion.
+          </p>
+          <p>
+            My work philosophy is rooted in collaboration and communication. I
+            believe that the best results come from working with a team that is
+            open and transparent about their goals, challenges, and ideas. I
+            strive to approach each project with a problem-solving mindset,
+            focusing on identifying the root cause of any issues and developing
+            elegant, scalable solutions. Additionally, I value continuous
+            learning and growth, and I'm always looking for ways to expand my
+            skill set and stay up to date with the latest trends and
+            technologies in the industry.
+          </p>
+          <p>
+            I got into tech because I wanted to move into a career where I could
+            have more impact in what I was doing and more agency over my own
+            growth. What I love about this industry is that it encourages and
+            demands constant learning. As someone who loves to discover new
+            concepts, practice new skills and take on new challenges, I cannot
+            imagine a more perfect space to exist in. I have always enjoyed
+            using technology, and I absolutely love that I get to work in this
+            space where I get to deliver products that others can find the same
+            joy in that I felt growing up with technology.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
