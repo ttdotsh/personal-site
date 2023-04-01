@@ -10,6 +10,7 @@ import LinkedIn from "./svg/LinkedIn.astro"
 interface Props {
   class?: string
   orientation: "horizontal" | "vertical"
+  footer?: boolean
 }
 
 const links = [
@@ -48,8 +49,9 @@ const links = [
 
 <ul
   class={cx(
-    "flex text-zinc-400",
-    Astro.props.orientation === "vertical" ? "flex-col space-y-6" : "space-x-6",
+    "flex",
+    Astro.props.footer ? "text-zinc-400" : "text-zinc-500 dark:text-zinc-400",
+    Astro.props.orientation === "vertical" ? "flex-col space-y-5" : "space-x-6",
     Astro.props.class
   )}
 >
@@ -59,9 +61,10 @@ const links = [
         <a
           class={cx(
             "flex items-center transition",
-            "hover:text-zinc-600",
+            "dark:text-zinc-400",
+            Astro.props.footer ? "hover:text-zinc-600" : "hover:text-zinc-800",
             "dark:hover:text-zinc-100",
-            Astro.props.orientation === "vertical" && "gap-4"
+            Astro.props.orientation === "vertical" && "gap-x-3"
           )}
           href={href}
           target="_blank"
