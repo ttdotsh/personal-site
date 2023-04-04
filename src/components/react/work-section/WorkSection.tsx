@@ -1,57 +1,35 @@
 // Project imports
-import { UserIcon, HandThumbUpIcon, CheckIcon } from "./icons"
+import { CodeIcon, WorkIcon, RocketIcon } from "./icons"
 import { Timeline } from "./Timeline"
 
 const timeline = [
   {
-    id: 1,
-    content: "Applied to",
-    target: "Front End Developer",
-    href: "#",
-    date: "Sep 20",
-    datetime: "2020-09-20",
-    Icon: UserIcon,
-    iconBackground: "bg-gray-400",
-  },
-  {
-    id: 2,
-    content: "Advanced to phone screening by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 22",
-    datetime: "2020-09-22",
-    Icon: HandThumbUpIcon,
+    content: "Started working at",
+    target: "VIA Science",
+    description:
+      "Currently, I'm working as a full-stack developer at Via Science, where I build and maintain frontend apps in Angular and React, backend API’s and microservices with Python and Celery, and deployment pipelines with tools like Docker, Kubernetes, and AWS.",
+    date: "Sep 2022",
+    datetime: "2022-09-19",
+    Icon: WorkIcon,
     iconBackground: "bg-blue-500",
   },
   {
-    id: 3,
-    content: "Completed phone screening with",
-    target: "Martha Gardner",
-    href: "#",
-    date: "Sep 28",
-    datetime: "2020-09-28",
-    Icon: CheckIcon,
+    content: "Worked as a",
+    target: "Freelance Software Engineer",
+    description:
+      "I worked briefly as a freelance developer and took on projects using React helping a budding startup put together a component library for internal use, and React Native and Expo building out an MVP mobile app for a trucking company to help automate dispatching and check-in workflows.",
+    date: "Jun 2022",
+    datetime: "2022-06-23",
+    Icon: CodeIcon,
     iconBackground: "bg-green-500",
   },
   {
-    id: 4,
-    content: "Advanced to interview by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 30",
-    datetime: "2020-09-30",
-    Icon: HandThumbUpIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: 5,
-    content: "Completed interview with",
-    target: "Katherine Snyder",
-    href: "#",
-    date: "Oct 4",
-    datetime: "2020-10-04",
-    Icon: CheckIcon,
-    iconBackground: "bg-green-500",
+    content: "Career Transition",
+    description: "Hello",
+    date: "Dec 2021",
+    datetime: "2021-12-20",
+    Icon: RocketIcon,
+    iconBackground: "bg-orange-500",
   },
 ]
 
@@ -60,14 +38,19 @@ const timeline = [
  */
 export function WorkSection() {
   return (
-    <div className="flow-root">
-      <Timeline>
-        {timeline.map((e, i) => (
-          <Timeline.Event event={e}>
-            {i !== timeline.length - 1 && <Timeline.Connector />}
-          </Timeline.Event>
-        ))}
-      </Timeline>
-    </div>
+    <>
+      <div className="flow-root">
+        <Timeline>
+          {timeline.map((e, i) => (
+            <Timeline.Event
+              key={i}
+              event={e}
+              isFirst={i === 0}
+              isLast={i === timeline.length - 1}
+            />
+          ))}
+        </Timeline>
+      </div>
+    </>
   )
 }

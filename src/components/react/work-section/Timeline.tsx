@@ -1,5 +1,7 @@
 // Library imports
 import { cx } from "classix"
+import { useRef } from "react"
+import { Disclosure, Transition } from "@headlessui/react"
 
 // Project imports
 import type { TimelineEvent, Composable } from "@types"
@@ -15,49 +17,95 @@ export function Timeline({ children }: Composable) {
   )
 }
 
-interface TimelineEventProps extends Composable {
+interface TimelineEventProps {
   event: TimelineEvent
+  isFirst: boolean
+  isLast: boolean
 }
 
-Timeline.Event = function ({ event, children }: TimelineEventProps) {
+Timeline.Event = function ({
+  event,
+  isFirst = false,
+  isLast = false,
+}: TimelineEventProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
   return (
-    <li key={event.id}>
-      <div className="relative pb-8">
-        {children}
-        <div className="relative flex space-x-3">
+    <Disclosure as="li">
+      <div className="relative">
+        {isLast || <Timeline.Connector />}
+        <div className="relative flex items-center space-x-2 pb-6">
           <div>
             <span
               className={cx(
                 event.iconBackground,
-                "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-white"
+                "flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white",
+                "dark:ring-zinc-900"
               )}
             >
               <event.Icon className="h-5 w-5 text-white" aria-hidden="true" />
             </span>
           </div>
-          <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-            <div>
-              <p className="text-sm text-gray-500">
-                {event.content}{" "}
-                <a href={event.href} className="font-medium text-gray-900">
-                  {event.target}
-                </a>
+          <Disclosure.Button
+            className={cx(
+              "flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
+              "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors dark:hover:bg-zinc-800"
+            )}
+          >
+            <div className="text-left">
+              <p className="text-sm">
+                {event.content}
+                {event.target && (
+                  <span className="font-semibold"> {event.target}</span>
+                )}
               </p>
             </div>
-            <div className="whitespace-nowrap text-right text-sm text-gray-500">
-              <time dateTime={event.datetime}>{event.date}</time>
+            <div className="whitespace-nowrap text-right text-sm text-zinc-500 dark:text-zinc-400">
+              <span>
+                <time dateTime={event.datetime}>
+                  {event.date}
+                  {isFirst && " - Present"}
+                </time>
+              </span>
             </div>
-          </div>
+          </Disclosure.Button>
         </div>
+        <Transition
+          ref={ref}
+          className="overflow-hidden transition-[max-height]"
+          beforeEnter={() => {
+            ref.current &&
+              ref.current.style.setProperty(
+                `max-height`,
+                `${ref.current.scrollHeight}px`
+              )
+          }}
+          beforeLeave={() => {
+            ref.current && ref.current.style.setProperty(`max-height`, `0px`)
+          }}
+          enter="duration-400 ease-in"
+          enterFrom="max-h-0"
+          leave="duration-300 ease-out"
+        >
+          <Disclosure.Panel
+            className="ml-11 px-3 pb-6 dark:text-zinc-200"
+            as="p"
+          >
+            {event.description}
+          </Disclosure.Panel>
+        </Transition>
       </div>
-    </li>
+    </Disclosure>
   )
 }
 
 Timeline.Connector = function () {
   return (
     <span
-      className="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
+      className={cx(
+        "absolute left-4 top-4 -ml-px h-full w-0.5",
+        "bg-zinc-200 dark:bg-zinc-300/30"
+      )}
       aria-hidden="true"
     />
   )
