@@ -3,16 +3,6 @@ export interface NavItem {
   href: string
 }
 
-export interface TimelineEvent {
-  content: string
-  target?: string
-  description?: string
-  date: string
-  datetime: string
-  Icon: (props: Stylable) => JSX.Element
-  iconBackground: string
-}
-
 /**
  * React Component Prop Types
  */
