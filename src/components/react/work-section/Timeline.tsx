@@ -119,7 +119,7 @@ Timeline.Button = function (props: TimelineButtonProps) {
   return (
     <Disclosure.Button
       className={cx(
-        "flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
+        "group flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
         "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors",
         "dark:hover:bg-zinc-800"
       )}
@@ -128,7 +128,16 @@ Timeline.Button = function (props: TimelineButtonProps) {
         <p className="text-sm">
           {props.content}
           {props.target && (
-            <span className="font-semibold"> {props.target}</span>
+            <span
+              className={cx(
+                "font-semibold",
+                "group-hover:text-teal-500 group-hover:transition-colors",
+                "dark:group-hover:text-teal-400"
+              )}
+            >
+              {" "}
+              {props.target}
+            </span>
           )}
         </p>
       </div>
