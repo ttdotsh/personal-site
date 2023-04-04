@@ -4,11 +4,10 @@ import { Popover, Transition } from "@headlessui/react"
 import { cx } from "classix"
 
 // Project imports
-import type { NavItem } from "@types"
+import type { Composable, NavItem, Stylable } from "@types"
 
-interface MobileNavProps {
+interface MobileNavProps extends Stylable {
   navItems: NavItem[]
-  className?: string
 }
 
 /**
@@ -82,9 +81,8 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
   )
 }
 
-interface NavItemProps {
+interface NavItemProps extends Composable {
   href: string
-  children: React.ReactNode
 }
 
 function MobileNavItem({ href, children }: NavItemProps) {
@@ -101,11 +99,7 @@ function MobileNavItem({ href, children }: NavItemProps) {
   )
 }
 
-interface IconProps {
-  className?: string
-}
-
-function ChevronIcon({ className }: IconProps) {
+function ChevronIcon({ className }: Stylable) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +118,7 @@ function ChevronIcon({ className }: IconProps) {
   )
 }
 
-function CloseIcon({ className }: IconProps) {
+function CloseIcon({ className }: Stylable) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

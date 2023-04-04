@@ -3,6 +3,7 @@ import { cx } from "classix"
 
 // Project imports
 import { toggleTheme } from "../../../utils/theme"
+import type { Stylable } from "@types"
 
 /**
  * @requires client:load
@@ -45,11 +46,7 @@ function ThemeIcon() {
   )
 }
 
-interface PathProps {
-  className?: string
-}
-
-function LightPath({ className }: PathProps) {
+function LightPath({ className }: Stylable) {
   return (
     <path
       className={className}
@@ -60,7 +57,7 @@ function LightPath({ className }: PathProps) {
   )
 }
 
-function DarkPath({ className }: PathProps) {
+function DarkPath({ className }: Stylable) {
   return (
     <path
       className={className}

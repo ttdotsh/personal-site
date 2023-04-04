@@ -2,11 +2,10 @@
 import { cx } from "classix"
 
 // Project imports
-import type { NavItem } from "@types"
+import type { NavItem, Stylable, Composable } from "@types"
 
-interface DesktopNavProps {
+interface DesktopNavProps extends Stylable {
   navItems: NavItem[]
-  className?: string
 }
 
 /**
@@ -32,9 +31,8 @@ export function DesktopNav({ navItems, className }: DesktopNavProps) {
   )
 }
 
-interface NavItemProps {
+interface NavItemProps extends Composable {
   href: string
-  children: React.ReactNode
 }
 
 function DesktopNavItem({ href, children }: NavItemProps) {
