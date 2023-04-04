@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import SocialLinks from "../components/SocialLinks.astro"
+import { WorkSection } from "components/react/work-section"
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,6 +18,9 @@ import SocialLinks from "../components/SocialLinks.astro"
         quis?
       </p>
       <SocialLinks orientation="horizontal" />
+    </section>
+    <section class="mt-12">
+      <WorkSection client:load />
     </section>
   </main>
 </Layout>
