@@ -125,9 +125,8 @@ Timeline.Button = function (props: TimelineButtonProps) {
     <Disclosure.Button
       className={cx(
         "group flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
-        "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors",
-        "dark:hover:bg-zinc-800",
-        "dark:active:bg-zinc-700/50"
+        "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors active:bg-zinc-200/60",
+        "dark:hover:bg-zinc-800 dark:active:bg-zinc-700/50"
       )}
     >
       <div className="text-left">
