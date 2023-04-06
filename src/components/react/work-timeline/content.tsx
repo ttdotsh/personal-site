@@ -1,8 +1,6 @@
-// Project imports
 import { CodeIcon, WorkIcon, RocketIcon } from "./icons"
-import { Timeline } from "./Timeline"
 
-const timeline = [
+export const timeline = [
   {
     content: "Started working at",
     target: "VIA Science",
@@ -30,17 +28,3 @@ const timeline = [
     iconBackground: "bg-orange-500",
   },
 ]
-
-/**
- * @requires client:load
- */
-export function WorkSection() {
-  return (
-    <div className="space-y-8">
-      <h4 className="border-b pb-1 text-xs font-bold dark:border-zinc-300/20 dark:text-zinc-400">
-        Work
-      </h4>
-      <Timeline timeline={timeline} />
-    </div>
-  )
-}

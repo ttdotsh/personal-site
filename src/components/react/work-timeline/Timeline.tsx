@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Disclosure, Transition } from "@headlessui/react"
 
 // Project imports
+import { timeline } from "./content"
 import type { Stylable } from "@types"
 
 interface TimelineEvent {
@@ -16,14 +17,10 @@ interface TimelineEvent {
   iconBackground: string
 }
 
-interface TimelineProps {
-  timeline: TimelineEvent[]
-}
-
 /**
  * @requires client:load
  */
-export function Timeline({ timeline }: TimelineProps) {
+export function Timeline() {
   return (
     <div className="flow-root">
       <ul role="list" className="-mb-8">
