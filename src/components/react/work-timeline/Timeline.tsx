@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Disclosure, Transition } from "@headlessui/react"
 
 // Project imports
+import { timeline } from "./content"
 import type { Stylable } from "@types"
 
 interface TimelineEvent {
@@ -16,14 +17,10 @@ interface TimelineEvent {
   iconBackground: string
 }
 
-interface TimelineProps {
-  timeline: TimelineEvent[]
-}
-
 /**
  * @requires client:load
  */
-export function Timeline({ timeline }: TimelineProps) {
+export function Timeline() {
   return (
     <div className="flow-root">
       <ul role="list" className="-mb-8">
@@ -55,7 +52,12 @@ Timeline.Event = function ({
     <Disclosure as="li">
       <div className="relative">
         {isLast || <Timeline.Connector />}
-        <div className="relative flex items-center space-x-2 pb-6">
+        <div
+          className={cx(
+            "relative flex items-center space-x-2",
+            isLast ? "mb-6" : "pb-6"
+          )}
+        >
           <Timeline.Icon
             Icon={event.Icon}
             iconBackground={event.iconBackground}
@@ -120,8 +122,8 @@ Timeline.Button = function (props: TimelineButtonProps) {
     <Disclosure.Button
       className={cx(
         "group flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
-        "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors",
-        "dark:hover:bg-zinc-800"
+        "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors active:bg-zinc-200/60",
+        "dark:hover:bg-zinc-800 dark:active:bg-zinc-700/50"
       )}
     >
       <div className="text-left">
