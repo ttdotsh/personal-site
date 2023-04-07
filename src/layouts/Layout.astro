@@ -17,7 +17,9 @@ const { title } = Astro.props
   <body class="bg-zinc-50 text-zinc-800 dark:bg-black dark:text-zinc-100">
     <InfiniteBackground>
       <Header client:load />
-      <slot />
+      <div class="mt-12 mb-12">
+        <slot />
+      </div>
       <Footer />
     </InfiniteBackground>
   </body>
