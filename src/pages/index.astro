@@ -11,37 +11,45 @@ import DownArrow from "components/svg/DownArrow.astro"
 
 <Layout title="Welcome to Astro.">
   <main>
-    <section class="max-w-2xl space-y-6">
-      <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
-        Software developer, tinkerer, & life-long learner
-      </h1>
-      <p class="text-base">
-        My name is Tim, and I am a software engineer in the Greater Boston area.
-        I
-      </p>
-      <SocialLinks orientation="horizontal" />
-    </section>
-    <section
-      class="mt-12 border-t border-zinc-100 pt-12 dark:border-zinc-300/20"
-    >
-      <Timeline client:load />
-      <div class="mt-8 flex justify-end">
-        <a
-          class={cx(
-            "flex text-sm items-center gap-2 rounded-lg px-6 py-2 bg-zinc-100",
-            "hover:transition-colors hover:text-teal-500 active:bg-zinc-200/60",
-            "dark:bg-zinc-800 dark:text-zinc-300",
-            "dark:hover:text-teal-400 dark:active:bg-zinc-700/50"
-          )}
-          download="Tim Tonelli Resume April 2023.pdf"
-          href="public/TimTonelliResume.pdf"
-        >
-          Download CV
-          <span>
-            <DownArrow />
-          </span>
-        </a>
-      </div>
-    </section>
+    <div class="space-y-12">
+      <section>
+        <div class="max-w-2xl space-y-6">
+          <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+            👋 I'm Tim, and I'm a software engineer from the Greater Boston
+            area.
+          </h1>
+          <p>
+            My work philosophy is rooted in collaboration and communication. I
+            believe that the best results come from working with a team that is
+            open and transparent about their goals, challenges, and ideas. I
+            strive to approach each project with a problem-solving mindset,
+            focusing on identifying the "why?" of any issues and developing
+            elegant, scalable solutions.
+          </p>
+          <SocialLinks orientation="horizontal" />
+        </div>
+      </section>
+      <hr class="border-zinc-100 dark:border-zinc-300/20" />
+      <section>
+        <Timeline client:load />
+        <div class="mt-8 flex justify-end">
+          <a
+            class={cx(
+              "flex text-sm items-center gap-2 rounded-lg px-6 py-2 bg-zinc-100",
+              "hover:transition-colors hover:text-teal-500 active:bg-zinc-200/60",
+              "dark:bg-zinc-800 dark:text-zinc-300",
+              "dark:hover:text-teal-400 dark:active:bg-zinc-700/50"
+            )}
+            download="Tim Tonelli Resume April 2023.pdf"
+            href="public/TimTonelliResume.pdf"
+          >
+            Download CV
+            <span>
+              <DownArrow />
+            </span>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
 </Layout>
