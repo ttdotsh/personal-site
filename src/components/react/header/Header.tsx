@@ -6,7 +6,7 @@ import { cx } from "classix"
 import { DesktopNav } from "./DesktopNav"
 import { MobileNav } from "./MobileNav"
 import { ThemeToggle } from "./ThemeToggle"
-import { clamp, setProperty, removeProperty } from "utils/style"
+import { clamp, setProperty } from "utils/style"
 
 const navItems = [
   { text: "Home", href: "/" },
@@ -48,10 +48,8 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener("scroll", updateStyles, { passive: true })
-    window.addEventListener("resize", updateStyles)
     return () => {
       window.removeEventListener("scroll", updateStyles)
-      window.removeEventListener("resize", updateStyles)
     }
   }, [])
   return (
