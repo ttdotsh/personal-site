@@ -1,3 +1,8 @@
+// Library imports
+import { useState, useEffect, useRef } from "react"
+import { cx } from "classix"
+
+// Project imports
 import { DesktopNav } from "./DesktopNav"
 import { MobileNav } from "./MobileNav"
 import { ThemeToggle } from "./ThemeToggle"
@@ -14,8 +19,8 @@ const navItems = [
  */
 export function Header() {
   return (
-    <header>
-      <div className="mb-6 mt-4 flex">
+    <header className="sticky top-4 z-10">
+      <div className="flex">
         <div className="flex-1"></div>
         <DesktopNav
           navItems={navItems}

@@ -19,7 +19,7 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
       <Popover.Button
         className={cx(
           "z-50 flex items-center rounded-full bg-white/90 p-2",
-          "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
+          "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-lg",
           "hover:text-teal-500 hover:transition-colors",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
           "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",

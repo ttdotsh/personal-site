@@ -22,7 +22,7 @@ interface TimelineEvent {
  */
 export function Timeline() {
   return (
-    <div className="flow-root">
+    <div className="z-0 flow-root">
       <ul role="list" className="-mb-8">
         {timeline.map((e, i) => (
           <Timeline.Event

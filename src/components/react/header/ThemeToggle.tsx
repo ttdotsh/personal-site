@@ -16,7 +16,7 @@ export function ThemeToggle() {
   return (
     <button
       className={cx(
-        "group rounded-full bg-white/90 py-2 px-4",
+        "group rounded-full bg-white/90 py-2 px-4 backdrop-blur-lg",
         "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
         "dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10",
         "dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20"
