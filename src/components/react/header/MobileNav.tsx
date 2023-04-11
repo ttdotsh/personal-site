@@ -23,7 +23,6 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
           "hover:text-teal-500 hover:transition-colors",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
           "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",
-          "focus:outline-none",
           className
         )}
       >
