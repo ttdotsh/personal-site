@@ -19,11 +19,10 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
       <Popover.Button
         className={cx(
           "z-50 flex items-center rounded-full bg-white/90 p-2",
-          "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
+          "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-lg",
           "hover:text-teal-500 hover:transition-colors",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
           "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",
-          "focus:outline-none",
           className
         )}
       >
@@ -55,11 +54,11 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
             as="nav"
             className={cx(
               "fixed inset-x-6 top-14 z-50 rounded-xl",
-              "bg-white/95 p-4 ring-1 ring-white",
-              "dark:bg-zinc-800/95 dark:ring-zinc-800"
+              "bg-white py-4 px-2 ring-1 ring-white",
+              "dark:bg-zinc-900 dark:ring-zinc-800"
             )}
           >
-            <div className="flex items-center justify-between px-2">
+            <div className="flex items-center justify-between px-4">
               <h2 className="text-sm text-zinc-500 dark:text-zinc-400">
                 Navigation
               </h2>
@@ -67,7 +66,7 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
                 <CloseIcon />
               </Popover.Button>
             </div>
-            <ul className="mt-2 divide-y divide-zinc-100 dark:divide-zinc-100/5">
+            <ul className="mt-2">
               {navItems.map(({ text, href }, i) => (
                 <MobileNavItem key={i} href={href}>
                   {text}
@@ -91,7 +90,11 @@ function MobileNavItem({ href, children }: NavItemProps) {
       <Popover.Button
         as="a"
         href={href}
-        className="block rounded-lg p-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+        className={cx(
+          "block rounded-lg py-2 px-4 transition",
+          "hover:bg-zinc-100 hover:text-teal-500",
+          "dark:hover:bg-zinc-800 dark:hover:text-teal-400"
+        )}
       >
         {children}
       </Popover.Button>
