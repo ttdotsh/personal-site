@@ -52,6 +52,7 @@ export function Header() {
       window.removeEventListener("scroll", updateStyles)
     }
   }, [])
+
   return (
     <header className={cx("mb-[--header-mb] h-[--header-height]")}>
       <div ref={headerRef} className="sticky top-0 z-10 h-12 pt-4">
