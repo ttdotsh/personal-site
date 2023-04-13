@@ -1,0 +1,32 @@
+---
+type WithDivider = {
+  divider: true
+  heading?: string
+}
+
+type WithoutDivider = {
+  divider?: false
+}
+
+type Props = WithDivider | WithoutDivider
+
+const { divider, heading } = Astro.props
+---
+
+<section>
+  {
+    divider && (
+      <>
+        {heading && (
+          <h2 class="text-sm font-semibold text-zinc-500 dark:text-zinc-300">
+            {heading}
+          </h2>
+        )}
+        <hr class="mt-1 border-zinc-100 dark:border-zinc-300/20" />
+      </>
+    )
+  }
+  <div class="mt-6">
+    <slot />
+  </div>
+</section>
