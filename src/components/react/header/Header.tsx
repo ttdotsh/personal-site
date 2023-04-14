@@ -9,10 +9,9 @@ import { ThemeToggle } from "./ThemeToggle"
 import { clamp, setProperty } from "utils/style"
 
 const navItems = [
-  { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Projects", href: "#" },
-  { text: "Hobbies", href: "#" },
+  { text: "Home", href: "#" },
+  { text: "Work", href: "#work" },
+  { text: "About", href: "#about" },
 ]
 
 /**
@@ -52,6 +51,7 @@ export function Header() {
       window.removeEventListener("scroll", updateStyles)
     }
   }, [])
+
   return (
     <header className={cx("mb-[--header-mb] h-[--header-height]")}>
       <div ref={headerRef} className="sticky top-0 z-10 h-12 pt-4">
