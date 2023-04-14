@@ -9,10 +9,9 @@ import { ThemeToggle } from "./ThemeToggle"
 import { clamp, setProperty } from "utils/style"
 
 const navItems = [
-  { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Projects", href: "#" },
-  { text: "Hobbies", href: "#" },
+  { text: "Home", href: "#" },
+  { text: "Work", href: "#work" },
+  { text: "About", href: "#about" },
 ]
 
 /**
