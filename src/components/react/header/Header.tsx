@@ -29,7 +29,7 @@ export function Header() {
     const scrollY = clamp(
       window.scrollY,
       0,
-      document.body.scrollHeight - window.innerHeight
+      document.body.scrollHeight - window.innerHeight,
     )
 
     if (scrollY < downDelay) {
@@ -57,15 +57,15 @@ export function Header() {
       <div ref={headerRef} className="sticky top-0 z-10 h-12 pt-4">
         <div className="flex">
           <div className="flex-1"></div>
-          <DesktopNav
+          {/* <DesktopNav
             navItems={navItems}
             className="pointer-events-auto hidden md:block"
-          />
+          /> */}
           <div className="flex flex-1 items-center justify-end">
-            <MobileNav
+            {/* <MobileNav
               navItems={navItems}
               className="pointer-events-auto mr-4 md:hidden"
-            />
+            /> */}
             <ThemeToggle />
           </div>
         </div>

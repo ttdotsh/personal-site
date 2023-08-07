@@ -9,17 +9,15 @@ type WithoutDivider = {
 }
 
 type Props = (WithDivider | WithoutDivider) & { id?: string }
-
-const { divider, heading, id } = Astro.props
 ---
 
-<section id={id}>
+<section id={Astro.props.id}>
   {
-    divider && (
+    Astro.props.divider && (
       <>
-        {heading && (
+        {Astro.props.heading && (
           <h2 class="select-none pt-2 text-sm font-semibold text-zinc-500 dark:text-zinc-300">
-            {heading}
+            {Astro.props.heading}
           </h2>
         )}
         <hr class="mt-1 border-zinc-100 dark:border-zinc-300/20" />
