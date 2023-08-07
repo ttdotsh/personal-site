@@ -8,9 +8,8 @@ import { timeline } from "./content"
 import type { Stylable } from "@types"
 
 interface TimelineEvent {
-  content: string
-  target?: string
-  detail: string
+  title: string
+  content: string[]
   date: string
   datetime?: string
   Icon: (props: Stylable) => JSX.Element
@@ -30,7 +29,7 @@ export function Timeline() {
             event={e}
             isFirst={i === 0}
             isLast={i === timeline.length - 1}
-          />
+          ></Timeline.Event>
         ))}
       </ul>
     </div>
@@ -55,7 +54,7 @@ Timeline.Event = function ({
         <div
           className={cx(
             "relative flex items-center space-x-2",
-            isLast ? "mb-6" : "pb-6"
+            isLast ? "mb-6" : "pb-6",
           )}
         >
           <Timeline.Icon
@@ -63,14 +62,13 @@ Timeline.Event = function ({
             iconBackground={event.iconBackground}
           />
           <Timeline.Button
-            content={event.content}
-            target={event.target}
+            title={event.title}
             date={event.date}
             datetime={event.date}
             isFirst={isFirst}
           />
         </div>
-        <Timeline.Detail detail={event.detail} />
+        <Timeline.Detail content={event.content} />
       </div>
     </Disclosure>
   )
@@ -81,7 +79,7 @@ Timeline.Connector = function () {
     <span
       className={cx(
         "absolute left-4 top-4 -ml-px h-full w-0.5",
-        "bg-zinc-200 dark:bg-zinc-300/30"
+        "bg-zinc-200 dark:bg-zinc-300/30",
       )}
       aria-hidden="true"
     />
@@ -100,7 +98,7 @@ Timeline.Icon = function (props: TimelineIconProps) {
         className={cx(
           props.iconBackground,
           "flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white",
-          "dark:ring-zinc-900"
+          "dark:ring-zinc-900",
         )}
       >
         <props.Icon className="h-5 w-5 text-white" aria-hidden="true" />
@@ -110,8 +108,7 @@ Timeline.Icon = function (props: TimelineIconProps) {
 }
 
 interface TimelineButtonProps {
-  content: string
-  target?: string
+  title: string
   date: string
   datetime: string
   isFirst: boolean
@@ -123,26 +120,18 @@ Timeline.Button = function (props: TimelineButtonProps) {
       className={cx(
         "group flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
         "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors active:bg-zinc-200/60",
-        "dark:hover:bg-zinc-800 dark:active:bg-zinc-700/50"
+        "dark:hover:bg-zinc-800 dark:active:bg-zinc-700/50",
       )}
     >
-      <div className="text-left">
-        <p className="text-sm">
-          {props.content}
-          {props.target && (
-            <span
-              className={cx(
-                "font-semibold",
-                "group-hover:text-teal-500 group-hover:transition-colors",
-                "dark:group-hover:text-teal-400"
-              )}
-            >
-              {" "}
-              {props.target}
-            </span>
-          )}
-        </p>
-      </div>
+      <p
+        className={cx(
+          "text-left text-sm font-semibold",
+          "group-hover:text-teal-500 group-hover:transition-colors",
+          "dark:group-hover:text-teal-400",
+        )}
+      >
+        {props.title}
+      </p>
       <div className="whitespace-nowrap text-right text-sm text-zinc-500 dark:text-zinc-400">
         <span>
           <time dateTime={props.datetime}>
@@ -156,7 +145,7 @@ Timeline.Button = function (props: TimelineButtonProps) {
 }
 
 interface TimelineDetailProps {
-  detail: string
+  content: string[]
 }
 
 Timeline.Detail = function (props: TimelineDetailProps) {
@@ -170,7 +159,7 @@ Timeline.Detail = function (props: TimelineDetailProps) {
         ref.current &&
           ref.current.style.setProperty(
             `max-height`,
-            `${ref.current.scrollHeight}px`
+            `${ref.current.scrollHeight}px`,
           )
       }}
       beforeLeave={() => {
@@ -181,8 +170,13 @@ Timeline.Detail = function (props: TimelineDetailProps) {
       leave="duration-300 ease-out"
       leaveFrom="max-h-fit"
     >
-      <Disclosure.Panel className="ml-11 px-3 pb-6 dark:text-zinc-200" as="p">
-        {props.detail}
+      <Disclosure.Panel
+        as="p"
+        className="ml-11 space-y-3 px-3 pb-6 dark:text-zinc-200"
+      >
+        {props.content.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
       </Disclosure.Panel>
     </Transition>
   )
