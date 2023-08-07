@@ -2,27 +2,29 @@ import { CodeIcon, WorkIcon, RocketIcon } from "./icons"
 
 export const timeline = [
   {
-    content: "Started working at",
-    target: "VIA Science",
-    detail:
-      "Currently, I'm working as a full-stack developer at Via Science, where I build and maintain frontend apps in Angular and React, backend API’s and microservices with Python, Docker, Kubernetes and Celery, and deployment pipelines with tools like Github Actions, Terraform and AWS.",
+    title: "VIA Science",
+    content: [
+      "I'm working as a full-stack engineer at VIA, where I started out on a client-facing team building and maintaining a frontend app in Angular, as well as APIs and Microservices in Python. During my time on this team, I also got familiar with deployment tools like Docker, Kubernetes, Github Actions and AWS. I was able to deliver new features, resolve old technical debt, and build out prototypes for new tools and services.",
+      "After continued growth, I was able to make a move to VIA's Platform team, where I am able to make a larger impact by building services and tools that all client-facing teams are able to use when building their applications.",
+    ],
     date: "Sep 2022",
     Icon: WorkIcon,
     iconBackground: "bg-blue-500",
   },
   {
-    content: "Worked as a",
-    target: "Freelance Software Engineer",
-    detail:
+    title: "Freelance Software Engineer",
+    content: [
       "I worked briefly as a freelance developer and took on projects using React helping a budding startup put together a component library for internal use, and React Native and Expo building out an MVP mobile app for a trucking company to help automate dispatching and check-in workflows.",
+    ],
     date: "Jun 2022",
     Icon: CodeIcon,
     iconBackground: "bg-green-500",
   },
   {
-    content: "Career Transition",
-    detail:
-      "I had been unhappy with my career path for a while, and eventually I decided it was time to make a move. I wanted to move into a career where I could have more impact in what I was doing and more agency over my own growth. After validating my interest in coding, I decided this was the direction I wanted to go in. During this time, I attended a bootcamp to provide some structure and acceleration to the learning process. What I love about this industry is that it encourages and demands constant learning. As someone who loves to discover new concepts, practice new skills and take on new challenges, I cannot imagine a more perfect space to exist in.",
+    title: "Career Transition",
+    content: [
+      "I had been unhappy with my career path in recruitment for a while, and eventually I decided it was time to make a move. I wanted to move into a career where I could have more impact in what I was doing and more agency over my own growth. After validating my interest in coding, I decided this was the direction I wanted to go in. During this time, I attended a bootcamp to provide some structure and acceleration to the learning process.",
+    ],
     date: "Dec 2021",
     Icon: RocketIcon,
     iconBackground: "bg-orange-500",

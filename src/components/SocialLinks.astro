@@ -18,7 +18,7 @@ const links = [
   {
     name: "GitHub",
     text: "Follow on Github",
-    href: "https://github.com/timTonelli",
+    href: "https://github.com/ttdotsh",
     Component: GitHub,
   },
   {
@@ -30,7 +30,7 @@ const links = [
   {
     name: "Twitter",
     text: "Follow on Twitter",
-    href: "https://twitter.com/timTonelli_",
+    href: "https://twitter.com/ttdotsh_",
     Component: Twitter,
   },
   {
@@ -55,7 +55,7 @@ const links = [
       ? "text-zinc-400"
       : "text-zinc-500 dark:text-zinc-400",
     Astro.props.orientation === "vertical" ? "flex-col space-y-5" : "space-x-6",
-    Astro.props.class
+    Astro.props.class,
   )}
 >
   {
@@ -69,7 +69,7 @@ const links = [
               ? "hover:text-zinc-600"
               : "hover:text-zinc-800",
             "dark:hover:text-zinc-100",
-            Astro.props.orientation === "vertical" && "gap-x-3"
+            Astro.props.orientation === "vertical" && "gap-x-3",
           )}
           href={href}
           target="_blank"
