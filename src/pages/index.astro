@@ -1,27 +1,27 @@
 ---
 // Library imports
 import { cx } from "classix"
-import { Picture } from "@astrojs/image/components"
+// import { Picture } from "astro:assets"
 
 // Project imports
 import Layout from "../layouts/Layout.astro"
 import Section from "layouts/Section.astro"
 import { Timeline } from "components/react/work-timeline"
 import DownArrow from "components/svg/DownArrow.astro"
+// import image from "../assets/placeholder.jpeg"
 ---
 
 <Layout title="Tim Tonelli">
   <main>
     <div class="space-y-12 sm:space-y-6">
       <Section>
-        <Picture
-          class="rounded-full shadow-lg"
-          src={import("../assets/placeholder.jpeg")}
-          alt="portrait"
-          sizes="(min-width: 640px) 6rem, (min-width: 1024px) 8rem, 4rem"
-          widths={[100, 200, 400]}
-          aspectRatio={1 / 1}
-        />
+        <!-- <Picture -->
+        <!--   class="rounded-full shadow-lg" -->
+        <!--   src={image} -->
+        <!--   alt="portrait" -->
+        <!--   widths={[100, 200, 400]} -->
+        <!--   sizes="(min-width: 640px) 6rem, (min-width: 1024px) 8rem, 4rem" -->
+        <!-- /> -->
         <div class="max-w-2xl">
           <h1 class="mt-6 text-3xl font-bold md:text-4xl">
             👋 I'm Tim and I'm from the Boston area
