@@ -174,8 +174,8 @@ Timeline.Detail = function (props: TimelineDetailProps) {
         as="p"
         className="ml-11 space-y-3 px-3 pb-6 dark:text-zinc-200"
       >
-        {props.content.map((paragraph) => (
-          <p>{paragraph}</p>
+        {props.content.map((paragraph, idx) => (
+          <p key={idx}>{paragraph}</p>
         ))}
       </Disclosure.Panel>
     </Transition>
