@@ -1,13 +1,11 @@
 ---
 // Library imports
-import { cx } from "classix"
 import { Picture } from "astro:assets"
 
 // Project imports
 import Layout from "../layouts/Layout.astro"
 import Section from "layouts/Section.astro"
 import { Timeline } from "components/react/work-timeline"
-import DownArrow from "components/svg/DownArrow.astro"
 import image from "../assets/placeholder.jpeg"
 ---
 
@@ -43,23 +41,6 @@ import image from "../assets/placeholder.jpeg"
 
       <Section id="work" divider heading="Work">
         <Timeline client:load />
-        <div class="mt-6 flex justify-end">
-          <a
-            class={cx(
-              "flex text-sm items-center gap-2 rounded-lg px-6 py-2 bg-zinc-100",
-              "hover:transition-colors hover:text-teal-500 active:bg-zinc-200/60",
-              "dark:bg-zinc-800 dark:text-zinc-300",
-              "dark:hover:text-teal-400 dark:active:bg-zinc-700/50",
-            )}
-            download="Tim Tonelli Resume April 2023.pdf"
-            href="public/TimTonelliResume.pdf"
-          >
-            Download CV
-            <span>
-              <DownArrow />
-            </span>
-          </a>
-        </div>
       </Section>
     </div>
   </main>
