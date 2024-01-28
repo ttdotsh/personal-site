@@ -22,7 +22,7 @@ interface TimelineEvent {
 export function Timeline() {
   return (
     <div className="z-0 flow-root">
-      <ul role="list" className="-mb-8">
+      <ul role="list">
         {timeline.map((e, i) => (
           <Timeline.Event
             key={i}
@@ -54,7 +54,7 @@ Timeline.Event = function ({
         <div
           className={cx(
             "relative flex items-center space-x-2",
-            isLast ? "mb-6" : "pb-6",
+            isLast ? "" : "pb-6",
           )}
         >
           <Timeline.Icon
