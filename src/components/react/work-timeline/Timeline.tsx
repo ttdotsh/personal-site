@@ -20,7 +20,7 @@ interface TimelineEvent {
 export function Timeline() {
   return (
     <div className="z-0 flow-root">
-      <ul role="list">
+      <ul className="space-y-6" role="list">
         {timeline.map((e, i) => (
           <Timeline.Event
             key={i}
@@ -49,12 +49,7 @@ Timeline.Event = function ({
     <Disclosure as="li">
       <div className="relative">
         {isLast || <Timeline.Connector />}
-        <div
-          className={cn(
-            "relative flex items-center space-x-2",
-            isLast ? "" : "pb-6",
-          )}
-        >
+        <div className={cn("relative flex items-center space-x-2")}>
           <Timeline.Icon
             Icon={event.Icon}
             iconBackground={event.iconBackground}
@@ -76,7 +71,7 @@ Timeline.Connector = function () {
   return (
     <span
       className={cn(
-        "absolute left-4 top-4 -ml-px h-full w-0.5",
+        "absolute left-4 top-6 -ml-px h-full w-0.5",
         "bg-zinc-200 dark:bg-zinc-300/30",
       )}
       aria-hidden="true"
@@ -170,7 +165,7 @@ Timeline.Detail = function (props: TimelineDetailProps) {
     >
       <Disclosure.Panel
         as="p"
-        className="ml-11 space-y-3 px-3 pb-6 dark:text-zinc-200"
+        className="ml-11 space-y-3 px-3 pt-6 dark:text-zinc-200"
       >
         {props.content.map((paragraph, idx) => (
           <p key={idx}>{paragraph}</p>
