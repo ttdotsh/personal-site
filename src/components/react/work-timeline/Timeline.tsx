@@ -1,9 +1,7 @@
-// Library imports
-import { cx } from "classix"
 import { useRef } from "react"
 import { Disclosure, Transition } from "@headlessui/react"
 
-// Project imports
+import { cn } from "@utils/cn"
 import { timeline } from "./content"
 import type { Stylable } from "@types"
 
@@ -52,7 +50,7 @@ Timeline.Event = function ({
       <div className="relative">
         {isLast || <Timeline.Connector />}
         <div
-          className={cx(
+          className={cn(
             "relative flex items-center space-x-2",
             isLast ? "" : "pb-6",
           )}
@@ -77,7 +75,7 @@ Timeline.Event = function ({
 Timeline.Connector = function () {
   return (
     <span
-      className={cx(
+      className={cn(
         "absolute left-4 top-4 -ml-px h-full w-0.5",
         "bg-zinc-200 dark:bg-zinc-300/30",
       )}
@@ -95,7 +93,7 @@ Timeline.Icon = function (props: TimelineIconProps) {
   return (
     <div>
       <span
-        className={cx(
+        className={cn(
           props.iconBackground,
           "flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white",
           "dark:ring-zinc-900",
@@ -117,14 +115,14 @@ interface TimelineButtonProps {
 Timeline.Button = function (props: TimelineButtonProps) {
   return (
     <Disclosure.Button
-      className={cx(
+      className={cn(
         "group flex flex-1 justify-between space-x-4 rounded-lg px-3 py-2",
         "hover:cursor-pointer hover:bg-zinc-100 hover:transition-colors active:bg-zinc-200/60",
         "dark:hover:bg-zinc-800 dark:active:bg-zinc-700/50",
       )}
     >
       <p
-        className={cx(
+        className={cn(
           "text-left text-sm font-semibold",
           "group-hover:text-teal-500 group-hover:transition-colors",
           "dark:group-hover:text-teal-400",

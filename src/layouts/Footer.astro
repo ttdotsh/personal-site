@@ -1,23 +1,20 @@
 ---
-// Library imports
-import { cx } from "classix"
-
-// Project imports
-import SocialLinks from "../components/SocialLinks.astro"
+import { cn } from "@utils/cn"
+import SocialLinks from "@components/SocialLinks.astro"
 
 const year = new Date().getFullYear()
 ---
 
 <footer>
   <div
-    class={cx(
+    class={cn(
       "mx-auto border-t flex max-w-7xl flex-col items-center py-12 px-6 border-zinc-100 text-zinc-500 ",
       "dark:border-zinc-300/20 dark:text-zinc-400",
       "md:flex-row md:justify-between lg:px-8",
     )}
   >
     <SocialLinks class="md:order-2" orientation="horizontal" />
-    <p class={cx("pt-8 text-center text-xs leading-5", "md:order-1 md:pt-0")}>
+    <p class={cn("pt-8 text-center text-xs leading-5", "md:order-1 md:pt-0")}>
       &copy; {year} Tim Tonelli. All rights reserved.
     </p>
   </div>
