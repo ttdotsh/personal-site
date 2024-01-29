@@ -49,7 +49,7 @@ Timeline.Event = function ({
     <Disclosure as="li">
       <div className="relative">
         {isLast || <Timeline.Connector />}
-        <div className={cn("relative flex items-center space-x-2")}>
+        <div className="relative flex items-center space-x-2">
           <Timeline.Icon
             Icon={event.Icon}
             iconBackground={event.iconBackground}
