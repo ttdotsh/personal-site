@@ -6,18 +6,11 @@ import type { Stylable } from "@types"
  * @requires client:load
  * @todo add long press functionality to make a dropdown menu
  * with light, dark, system (clear localStorage) options
- * @todo find a way for hover:transition-colors to not apply to
- * background color, but for everything else
  */
 export function ThemeToggle() {
   return (
     <button
-      className={cn(
-        "group rounded-full bg-white/90 px-4 py-2 backdrop-blur-lg",
-        "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
-        "dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10",
-        "dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20",
-      )}
+      className="group rounded-full p-2 dark:text-zinc-50/50"
       onClick={toggleTheme}
     >
       <ThemeIcon />
