@@ -1,66 +1,39 @@
 ---
-// Library imports
-import { cx } from "classix"
-import { Picture } from "@astrojs/image/components"
-
-// Project imports
-import Layout from "../layouts/Layout.astro"
-import Section from "layouts/Section.astro"
-import { Timeline } from "components/react/work-timeline"
-import DownArrow from "components/svg/DownArrow.astro"
+import Layout from "@layouts/Layout.astro"
+import { Timeline } from "@components/react/work-timeline"
 ---
 
 <Layout title="Tim Tonelli">
   <main>
     <div class="space-y-12 sm:space-y-6">
-      <Section>
-        <Picture
-          class="rounded-full shadow-lg"
-          src={import("../assets/placeholder.jpeg")}
-          alt="portrait"
-          sizes="(min-width: 640px) 6rem, (min-width: 1024px) 8rem, 4rem"
-          widths={[100, 200, 400]}
-          aspectRatio={1 / 1}
-        />
-        <div class="max-w-2xl">
-          <h1 class="mt-6 text-3xl font-bold md:text-4xl">
-            👋 I'm Tim and I'm from the Boston area
-          </h1>
-          <div class="mt-3 space-y-3 text-zinc-600 dark:text-zinc-200">
-            <p>
-              I'm a software engineer, and I love to build things. Right now I
-              am learning Rust, and focusing on backend and systems programming.
-              I work at a startup based out of Somerville, MA where I work on
-              services and tools for the core platform.
-            </p>
-            <p>
-              Outside of programming, I like to tinker with mechanical
-              keyboards, play video games, and spend time with my partner Clare.
-            </p>
-          </div>
+      <section class="mx-auto max-w-3xl">
+        <h1 class="mt-6 text-3xl font-bold md:text-4xl">
+          👋 I'm Tim and I'm a software engineer currently located in the Boston
+          area
+        </h1>
+        <div class="space-y-3 pt-3 text-zinc-600 dark:text-zinc-200">
+          <p>
+            I love to build things, peek under the hood, and share knowledge
+            with others.
+          </p>
+          <p>
+            I’m currently working at VIA, a startup based in Somerville focused
+            on building software that helps clients make communities cleaner,
+            safer and more equitable.
+          </p>
         </div>
-      </Section>
-
-      <Section id="work" divider heading="Work">
-        <Timeline client:load />
-        <div class="mt-6 flex justify-end">
-          <a
-            class={cx(
-              "flex text-sm items-center gap-2 rounded-lg px-6 py-2 bg-zinc-100",
-              "hover:transition-colors hover:text-teal-500 active:bg-zinc-200/60",
-              "dark:bg-zinc-800 dark:text-zinc-300",
-              "dark:hover:text-teal-400 dark:active:bg-zinc-700/50",
-            )}
-            download="Tim Tonelli Resume April 2023.pdf"
-            href="public/TimTonelliResume.pdf"
-          >
-            Download CV
-            <span>
-              <DownArrow />
-            </span>
-          </a>
+      </section>
+      <section id="career">
+        <h2
+          class="select-none pb-1 pt-2 text-sm font-semibold text-zinc-500 dark:text-zinc-300"
+        >
+          Career
+        </h2>
+        <hr class="border-zinc-100 dark:border-zinc-300/20" />
+        <div class="pt-6">
+          <Timeline client:load />
         </div>
-      </Section>
+      </section>
     </div>
   </main>
 </Layout>
