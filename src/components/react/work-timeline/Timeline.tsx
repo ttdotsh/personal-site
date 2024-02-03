@@ -165,7 +165,7 @@ Timeline.Detail = function (props: TimelineDetailProps) {
     >
       <Disclosure.Panel
         as="p"
-        className="ml-11 space-y-3 px-3 pt-6 dark:text-zinc-200"
+        className="ml-11 space-y-3 px-3 pt-6 text-zinc-600 dark:text-zinc-200"
       >
         {props.content.map((paragraph, idx) => (
           <p key={idx}>{paragraph}</p>
