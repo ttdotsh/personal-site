@@ -1,5 +1,5 @@
 // Library imports
-import { cn } from "../../../../utils/cn"
+import { cn } from "@utils/cn"
 
 // Project imports
 import type { NavItem, Stylable, Composable } from "@types"
