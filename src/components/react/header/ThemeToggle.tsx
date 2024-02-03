@@ -10,7 +10,12 @@ import type { Stylable } from "@types"
 export function ThemeToggle() {
   return (
     <button
-      className="group rounded-full p-2 dark:text-zinc-50/50"
+      className={cn(
+        "group rounded-full bg-white/90 p-2 backdrop-blur-lg",
+        "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
+        "dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10",
+        "dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20",
+      )}
       onClick={toggleTheme}
     >
       <svg
