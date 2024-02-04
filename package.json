@@ -3,10 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview --host",
+    "dev": "bunx --bun astro dev --host",
+    "build": "bunx --bun astro build",
+    "preview": "bunx --bun astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
@@ -14,8 +13,6 @@
     "@astrojs/tailwind": "5.1.0",
     "@headlessui/react": "^1.7.13",
     "@headlessui/tailwindcss": "^0.1.2",
-    "@types/react": "^18.0.29",
-    "@types/react-dom": "^18.0.11",
     "astro": "4.2.1",
     "clsx": "^2.1.0",
     "react": "^18.2.0",
@@ -25,6 +22,9 @@
     "tw-merge": "^0.0.1-alpha.3"
   },
   "devDependencies": {
+    "@types/bun": "^1.0.4",
+    "@types/react": "^18.0.29",
+    "@types/react-dom": "^18.0.11",
     "prettier": "^3.0.0",
     "prettier-plugin-astro": "^0.13",
     "prettier-plugin-tailwindcss": "^0.5",
