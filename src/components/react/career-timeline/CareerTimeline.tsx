@@ -80,9 +80,9 @@ export function CareerTimelineEvent(props: CareerTimelineEventProps) {
         >
           <Disclosure.Panel
             as="div"
-            className="ml-11 space-y-3 px-3 pt-6 text-zinc-600 dark:text-zinc-200"
+            className="ml-11 px-3 pt-6 text-zinc-600 dark:text-zinc-200"
           >
-            {React.Children.map(props.children, (c) => c)}
+            {props.children}
           </Disclosure.Panel>
         </Transition>
       </div>
