@@ -1,5 +1,5 @@
 // Library imports
-import { cx } from "classix"
+import { cn } from "@utils/cn"
 
 // Project imports
 import type { NavItem, Stylable, Composable } from "@types"
@@ -15,7 +15,7 @@ export function DesktopNav({ navItems, className }: DesktopNavProps) {
   return (
     <nav className={className}>
       <ul
-        className={cx(
+        className={cn(
           "flex space-x-6 rounded-full bg-white/70 px-6 py-2.5",
           "text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-lg",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",

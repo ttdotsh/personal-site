@@ -1,6 +1,6 @@
 ---
 // Library imports
-import { cx } from "classix"
+import { cn } from "@utils/cn"
 
 // Project imports
 import GitHub from "./svg/GitHub.astro"
@@ -30,7 +30,7 @@ const links = [
   {
     name: "Twitter",
     text: "Follow on Twitter",
-    href: "https://twitter.com/ttdotsh_",
+    href: "https://twitter.com/tt_kb_",
     Component: Twitter,
   },
   {
@@ -49,7 +49,7 @@ const links = [
 ---
 
 <ul
-  class={cx(
+  class={cn(
     "flex",
     Astro.props.orientation === "horizontal"
       ? "text-zinc-400"
@@ -62,7 +62,7 @@ const links = [
     links.map(({ name, href, text, Component }) => (
       <li class="w-fit">
         <a
-          class={cx(
+          class={cn(
             "flex items-center transition",
             "dark:text-zinc-400",
             Astro.props.orientation === "horizontal"

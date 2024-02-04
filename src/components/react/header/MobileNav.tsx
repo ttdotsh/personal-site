@@ -1,7 +1,7 @@
 // Library imports
 import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
-import { cx } from "classix"
+import { cn } from "../../../../utils/cn"
 
 // Project imports
 import type { Composable, NavItem, Stylable } from "@types"
@@ -17,13 +17,13 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
   return (
     <Popover>
       <Popover.Button
-        className={cx(
+        className={cn(
           "z-50 flex items-center rounded-full bg-white/90 p-2",
           "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-lg",
           "hover:text-teal-500 hover:transition-colors",
           "dark:bg-zinc-800/70 dark:ring-zinc-50/10",
           "dark:hover:bg-zinc-800/90 dark:hover:text-teal-400 dark:hover:ring-zinc-50/20",
-          className
+          className,
         )}
       >
         <ChevronIcon className="transition-transform ui-open:-rotate-90" />
@@ -52,10 +52,10 @@ export function MobileNav({ navItems, className }: MobileNavProps) {
         >
           <Popover.Panel
             as="nav"
-            className={cx(
+            className={cn(
               "fixed inset-x-6 top-14 z-50 rounded-xl",
-              "bg-white py-4 px-2 ring-1 ring-white",
-              "dark:bg-zinc-900 dark:ring-zinc-800"
+              "bg-white px-2 py-4 ring-1 ring-white",
+              "dark:bg-zinc-900 dark:ring-zinc-800",
             )}
           >
             <div className="flex items-center justify-between px-4">
@@ -90,10 +90,10 @@ function MobileNavItem({ href, children }: NavItemProps) {
       <Popover.Button
         as="a"
         href={href}
-        className={cx(
-          "block rounded-lg py-2 px-4 transition",
+        className={cn(
+          "block rounded-lg px-4 py-2 transition",
           "hover:bg-zinc-100 hover:text-teal-500",
-          "dark:hover:bg-zinc-800 dark:hover:text-teal-400"
+          "dark:hover:bg-zinc-800 dark:hover:text-teal-400",
         )}
       >
         {children}
@@ -110,7 +110,7 @@ function ChevronIcon({ className }: Stylable) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cx("inline-block h-4 w-4", className)}
+      className={cn("inline-block h-4 w-4", className)}
     >
       <path
         strokeLinecap="round"
@@ -129,7 +129,7 @@ function CloseIcon({ className }: Stylable) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cx("h-6 w-6 transition hover:text-red-400", className)}
+      className={cn("h-6 w-6 transition hover:text-red-400", className)}
     >
       <path
         strokeLinecap="round"

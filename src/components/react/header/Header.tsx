@@ -1,18 +1,8 @@
-// Library imports
 import { useRef, useEffect } from "react"
-import { cx } from "classix"
 
-// Project imports
-import { DesktopNav } from "./DesktopNav"
-import { MobileNav } from "./MobileNav"
 import { ThemeToggle } from "./ThemeToggle"
-import { clamp, setProperty } from "utils/style"
-
-const navItems = [
-  { text: "Home", href: "#" },
-  { text: "Work", href: "#work" },
-  { text: "About", href: "#about" },
-]
+import { cn } from "@utils/cn"
+import { clamp, setProperty } from "@utils/style"
 
 /**
  * @requires client:load
@@ -53,7 +43,7 @@ export function Header() {
   }, [])
 
   return (
-    <header className={cx("mb-[--header-mb] h-[--header-height]")}>
+    <header className={cn("mb-[--header-mb] h-[--header-height]")}>
       <div ref={headerRef} className="sticky top-0 z-10 h-12 pt-4">
         <div className="flex">
           <div className="flex-1"></div>

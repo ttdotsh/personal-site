@@ -1,48 +1,37 @@
-// Library imports
-import { cx } from "classix"
-
-// Project imports
-import { toggleTheme } from "../../../utils/theme"
+import { cn } from "@utils/cn"
+import { toggleTheme } from "@utils/theme"
 import type { Stylable } from "@types"
 
 /**
  * @requires client:load
  * @todo add long press functionality to make a dropdown menu
  * with light, dark, system (clear localStorage) options
- * @todo find a way for hover:transition-colors to not apply to
- * background color, but for everything else
  */
 export function ThemeToggle() {
   return (
     <button
-      className={cx(
-        "group rounded-full bg-white/90 px-4 py-2 backdrop-blur-lg",
+      className={cn(
+        "group rounded-full bg-white/90 p-2 backdrop-blur-lg",
         "shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 ",
         "dark:bg-zinc-800/70 dark:text-zinc-50/50 dark:ring-zinc-50/10",
         "dark:hover:bg-zinc-800/90 dark:hover:ring-zinc-50/20",
       )}
       onClick={toggleTheme}
     >
-      <ThemeIcon />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className={cn(
+          "h-6 w-6 fill-none transition",
+          "group-hover:fill-current group-hover:text-orange-400",
+        )}
+      >
+        <LightPath className="dark:hidden" />
+        <DarkPath className="hidden dark:block" />
+      </svg>
     </button>
-  )
-}
-
-function ThemeIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className={cx(
-        "h-6 w-6 fill-none transition",
-        "group-hover:fill-current group-hover:text-orange-400",
-      )}
-    >
-      <LightPath className="dark:hidden" />
-      <DarkPath className="hidden dark:block" />
-    </svg>
   )
 }
 
